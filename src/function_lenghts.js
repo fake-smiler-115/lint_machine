@@ -32,7 +32,7 @@ const isFunctionLengthIsGreaterThan8 = (codeLines, i, lintIssuesList) => {
 export const checkFunctionLengths = (codeLines) => {
   const lintIssuesList = [];
   for (let index = 0; index < codeLines.length; index++) {
-    if (codeLines[index].trim().match(/ function |^function | function\(/)!== null) {
+    if (codeLines[index].trim().match(/ function |^function | function\(|= (.+) => {/)!== null) {
      isFunctionLengthIsGreaterThan8(codeLines, index, lintIssuesList);
     }
   }
